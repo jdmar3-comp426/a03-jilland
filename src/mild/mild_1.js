@@ -60,9 +60,8 @@ export function maxAndMin(numbers) {
 
     const minString = "min: " + min;
     const maxString = "max: " + max;
-
-    let retArr = [maxString, minString]
-    return retArr;
+    return maxString + ", " + minString;
+    //return "max: " + max + ", min: " + min;
 }
 
 /**
