@@ -76,16 +76,26 @@ export function maxAndMin(numbers) {
  */
 export function countArray(array) {
     let itemized = []
-
+    let searchedArr = []
     for(let i = 0; i < array.length; i++){
         let current = array[i];
         let counter = 0;
+        searchedArr.push(current);
+
         for (let j = i; j < array.length; j++){
             if(array[j] == current){
                 counter++;
             }
         }
-        itemized.push("'" + current + "': " + counter);
+        let boolFound = 0;
+        for(let k = 0; k < searchedArr.length; k++){
+            if(array[j] == searchedArr[i]){
+                boolFound = 1;
+            }
+        }
+        if(boolFound == 0){
+            itemized.push("'" + current + "': " + counter);
+        }
     }
 
     let startItem = "{ " + itemized[0] + ", ";
