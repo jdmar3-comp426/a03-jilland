@@ -61,7 +61,7 @@ export function maxAndMin(numbers) {
     const minString = "min: " + min;
     const maxString = "max: " + max;
 
-    let retArr = [minString, maxString]
+    let retArr = [maxString, minString]
     return retArr;
 }
 
@@ -86,7 +86,7 @@ export function countArray(array) {
                 counter++;
             }
         }
-        itemized.push(current +':' + counter);
+        itemized.push(current +' : ' + counter);
     }
 
     return itemized;
