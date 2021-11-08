@@ -9,7 +9,11 @@
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
 export function sumToString(a, b) {
-
+    const aString = a.toString();
+    const bString = b.toString();
+    const sum = a + b;
+    const sumString = sum.toString();
+    return aString + ' + ' + bString + ' = ' + sumString;
 }
 
 
@@ -24,7 +28,14 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
-
+    const arrLength = (endNumber - startNumber) + 1;
+    let array = [];
+    let addedNum = startNumber;
+    for (let i = 0; i < endNumber; i++){
+        array[i] = addedNum;
+        addedNum = addedNum + 1;
+    }
+    return array;
 }
 
 /**
@@ -35,7 +46,23 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
+    let min = numbers[0];
+    let max = numbers[0];
+    const arrLength = numbers.length();
 
+    for ( let i = 0; i < arrLength; i++){
+        if(numbers[i] < min){
+            min = numbers[i];
+        } else if (numbers[i] > max) {
+            max = numbers[i];
+        }
+    }
+
+    const minString = "min: " + min;
+    const maxString = "max: " + max;
+
+    let retArr = [minString, maxString]
+    return retArr;
 }
 
 /**
@@ -49,5 +76,18 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
+    let itemized = []
 
+    for(let i = 0; i < array.length(); i++){
+        let current = array[i];
+        let counter = 0;
+        for (let j = 0; j < array.length(); j++){
+            if(array[j] == current){
+                counter++;
+            }
+        }
+        itemized.push(current +':' + counter);
+    }
+
+    return itemized;
 }
