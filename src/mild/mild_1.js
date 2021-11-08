@@ -81,16 +81,15 @@ export function countArray(array) {
         let current = array[i];
         let counter = 0;
         searchedArr.push(current);
-
+        let boolFound = 0;
         for (let j = i; j < array.length; j++){
             if(array[j] == current){
+                for(let k = 0; k < searchedArr.length; k++){
+                    if(array[j] == searchedArr[i]){
+                        boolFound = 1;
+                    }
+                }
                 counter++;
-            }
-        }
-        let boolFound = 0;
-        for(let k = 0; k < searchedArr.length; k++){
-            if(array[j] == searchedArr[i]){
-                boolFound = 1;
             }
         }
         if(boolFound == 0){
