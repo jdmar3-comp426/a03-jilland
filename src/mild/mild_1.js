@@ -60,7 +60,7 @@ export function maxAndMin(numbers) {
 
     const minString = "min: " + min;
     const maxString = "max: " + max;
-    return maxString + ", " + minString;
+    return "{ " + maxString + ", " + minString + " }";
     //return "max: " + max + ", min: " + min;
 }
 
