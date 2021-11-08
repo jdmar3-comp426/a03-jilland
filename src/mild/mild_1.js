@@ -31,7 +31,7 @@ export function getIncreasingArray(startNumber, endNumber) {
     const arrLength = (endNumber - startNumber) + 1;
     let array = [];
     let addedNum = startNumber;
-    for (let i = 0; i < endNumber; i++){
+    for (let i = 0; i < arrLength; i++){
         array[i] = addedNum;
         addedNum = addedNum + 1;
     }
@@ -48,7 +48,7 @@ export function getIncreasingArray(startNumber, endNumber) {
 export function maxAndMin(numbers) {
     let min = numbers[0];
     let max = numbers[0];
-    const arrLength = numbers.length();
+    const arrLength = numbers.length;
 
     for ( let i = 0; i < arrLength; i++){
         if(numbers[i] < min){
@@ -78,10 +78,10 @@ export function maxAndMin(numbers) {
 export function countArray(array) {
     let itemized = []
 
-    for(let i = 0; i < array.length(); i++){
+    for(let i = 0; i < array.length; i++){
         let current = array[i];
         let counter = 0;
-        for (let j = 0; j < array.length(); j++){
+        for (let j = 0; j < array.length; j++){
             if(array[j] == current){
                 counter++;
             }
