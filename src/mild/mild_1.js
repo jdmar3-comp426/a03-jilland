@@ -83,7 +83,7 @@ export function countArray(array) {
         let current = array[i];
         let found = 0;
         if (i != 0 ) {
-            for(let k = 0; k < searched.length; k) {
+            for(let k = 0; k < searched.length; k++) {
                 if (current == searched[k]){
                     found = 1;
                 }
