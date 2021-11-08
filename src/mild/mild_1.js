@@ -75,36 +75,37 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    let itemized = []
-    let searchedArr = []
+    let searched = [];
+    let startItem = "{ ";
+    let item = startItem;
+
     for(let i = 0; i < array.length; i++){
         let current = array[i];
-        let counter = 0;
-        searchedArr.push(current);
-        let boolFound = 0;
-        for (let j = i; j < array.length; j++){
-            if(array[j] == current){
-                for(let k = 0; k < searchedArr.length; k++){
-                    if(array[j] == searchedArr[i]){
-                        boolFound = 1;
-                    }
+        let found = 0;
+        if (i != 0 ) {
+            for(let k = 0; k < searched.length; k) {
+                if (current == searched[k]){
+                    found = 1;
                 }
-                counter++;
             }
         }
-        if(boolFound == 0){
-            itemized.push("'" + current + "': " + counter);
+        
+        searched.push(current);
+        if(found == 0){
+            let counter = 0;
+            for(let j = i; j <array.length; j++){
+                if(current == array[j]){
+                    counter++;
+                }
+            }
+
+            if(i + 1 != array.length){
+                item = item + "'" + current + "': " + counter + ", ";
+            } else {
+                item = item + "'" + current + "': " + counter + " }";
+            }
         }
     }
 
-    let startItem = "{ " + itemized[0] + ", ";
-    let item = startItem;
-    for (let i = 1; i < itemized.length; i++){
-        if(i+1 != itemized.length){
-            item = item + itemized[i] + ", ";
-        } else {
-            item = item + itemized[i] + " }";
-        }
-    }
     return item;
 }
