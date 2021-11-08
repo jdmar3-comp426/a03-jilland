@@ -80,12 +80,12 @@ export function countArray(array) {
     for(let i = 0; i < array.length; i++){
         let current = array[i];
         let counter = 0;
-        for (let j = 0; j < array.length; j++){
+        for (let j = i; j < array.length; j++){
             if(array[j] == current){
                 counter++;
             }
         }
-        itemized.push("'" + current + "':" + counter);
+        itemized.push("'" + current + "': " + counter);
     }
 
     let startItem = "{ " + itemized[0] + ", ";
