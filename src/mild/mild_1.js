@@ -78,6 +78,7 @@ export function countArray(array) {
     let searched = [];
     let startItem = "{ ";
     let item = startItem;
+    let itemized = [];
 
     for(let i = 0; i < array.length; i++){
         let current = array[i];
@@ -98,12 +99,16 @@ export function countArray(array) {
                     counter++;
                 }
             }
+            let val = "'" + current + "': " + counter;
+            itemized.push(val);
+        }
+    }
 
-            if(i + 1 != array.length){
-                item = item + "'" + current + "': " + counter + ", ";
-            } else {
-                item = item + "'" + current + "': " + counter + " }";
-            }
+    for(let m = 0; m < itemized.length; m++){
+        if(m + 1 != itemized.length){
+            item = item + itemized[m] + ", ";
+        } else {
+            item = item + itemized[m] + " }";
         }
     }
 
