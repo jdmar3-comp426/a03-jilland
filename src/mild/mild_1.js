@@ -85,8 +85,17 @@ export function countArray(array) {
                 counter++;
             }
         }
-        itemized.push(current +' : ' + counter);
+        itemized.push("'" + current + "':" + counter);
     }
 
-    return itemized;
+    let startItem = "{ " + itemized[0] + ", ";
+    let item = startItem;
+    for (let i = 1; i < itemized.length; i++){
+        if(i+1 != itemized.length){
+            item = item + itemized[i] + ", ";
+        } else {
+            item = item + itemized[i] + " }";
+        }
+    }
+    return item;
 }
