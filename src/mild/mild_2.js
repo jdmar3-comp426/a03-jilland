@@ -7,13 +7,7 @@
  */
 export function identifyVariable(variable) {
    let varType = typeof variable;
-   let typeString = "";
-   if(varType == number){
-      typeString = "type: '" + varType + "', value: " + variable;
-   } else {
-      typeString = "type: '" + varType + "', value: '" + variable + "'";
-   }
-   return "{ " + typeString + " }"
+   return{ type: varType, value: variable}
 }
 
 
