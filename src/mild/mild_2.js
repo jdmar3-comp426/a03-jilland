@@ -70,7 +70,13 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
+   const changedO = new Object();
+   for(const property in object){
+      changedO[property] = object[property];
+   }
 
+   removeKey(changedO, key);
+   return changedO;
 }
 
 /**
@@ -95,5 +101,12 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
-
+   const changedO = new Object();
+   for(const property in object){
+      changedO[property] = object[property];
+   }
+   for(const key of keyList){
+      removeKey(changedO, key);
+   }
+   return changedO;
 }
