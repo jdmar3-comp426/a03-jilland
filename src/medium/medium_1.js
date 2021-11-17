@@ -65,10 +65,10 @@ export function getStatistics(array) {
     const median = getMedian(array);
     const min = sortArr[0];
     const max = sortArr[leng - 1];
-    const variance = variance(sortArr, mean);
-    const standardDev = Math.sqrt(variance);
+    const variaval = variance(sortArr, mean);
+    const standardDev = Math.sqrt(variaval);
 
-    return{length: leng, sum: sum, mean: mean, median: median, min: min, max: max, variance: variance, standard_deviation: standardDev};
+    return{length: leng, sum: sum, mean: mean, median: median, min: min, max: max, variance: variaval, standard_deviation: standardDev};
 
 }
 
