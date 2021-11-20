@@ -93,7 +93,7 @@ export const tenTimesFifty = () => {
  */
 export const everyEven = (arr, test) => {
     for(let i=0; i<arr.length; i = i + 2){
-        if(test(arr[i] == false)) {
+        if(!test(arr[i])) {
             return false;
         }
     }
@@ -123,7 +123,7 @@ export const everyEven = (arr, test) => {
  */
 export const someEven = (arr, test) => {
     for(let i=0; i<arr.length; i = i + 2){
-        if(test(arr[i] == true)) {
+        if(test(arr[i])) {
             return true;
         }
     }
@@ -156,8 +156,8 @@ export const someEven = (arr, test) => {
 export const filter = (arr, test) => {
     let passArr = [];
     let failArr = [];
-    for(let i=1; i<arr.length; i++){
-        if(test(arr[i] == true)){
+    for(let i=0; i<arr.length; i++){
+        if(test(arr[i])){
             passArr.push(arr[i]);
         } else {
             failArr.push(arr[i]);
