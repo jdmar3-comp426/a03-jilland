@@ -55,7 +55,7 @@ export const multiplyBy = (num1) => {
  *   "tenTimes" that multiplies a number by 10.
  */
 export const tenTimes = (number) => {
-    return multiplyBy(number, 10);
+    return multiplyBy(number)(10);
 }
 
 
@@ -92,7 +92,7 @@ export const tenTimesFifty = () => {
  *    everyEven([1, 1, 0, 1, 1], x => x === 1)  <--  returns false
  */
 export const everyEven = (arr, test) => {
-    for(let i=0; i<arr.length; i += 2){
+    for(let i=0; i<arr.length; i = i + 2){
         if(test(arr[i] == false)) {
             return false;
         }
@@ -122,7 +122,7 @@ export const everyEven = (arr, test) => {
  *    someEven([0, 0, 0, 0, 0], x => x === 0)  <--  returns true
  */
 export const someEven = (arr, test) => {
-    for(let i=0; i<arr.length; i += 2){
+    for(let i=0; i<arr.length; i = i + 2){
         if(test(arr[i] == true)) {
             return true;
         }
@@ -154,7 +154,17 @@ export const someEven = (arr, test) => {
  *       -->  { pass: [1, 5, 31], fail: [90] }
  */
 export const filter = (arr, test) => {
+    let passArr = [];
+    let failArr = [];
+    for(let i=1; i<arr.length; i++){
+        if(test(arr[i] == true)){
+            passArr.push(arr[i]);
+        } else {
+            failArr.push(arr[i]);
+        }
+    }
 
+    return {pass: passArr, fail: failArr}
 };
 
 
