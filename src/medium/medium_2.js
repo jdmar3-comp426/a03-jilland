@@ -8,6 +8,7 @@ see under the methods section
 */
 
 
+
 /**
  * This object contains data that has to do with every car in the `mpg_data` object.
  *
@@ -21,7 +22,7 @@ see under the methods section
  */
 export const allCarStats = {
     avgMpg: undefined,
-    allYearStats: undefined,
+    allYearStats: getStatistics(years),
     ratioHybrids: undefined,
 };
 

@@ -63,6 +63,18 @@ export function searchMpg(car_data, minCity, minHighway) {
  * @returns {[]} array of cars
  */
 export function searchName(car_data, searchTerm) {
+    let unsortedArr = [];
+    let searchNoCase = searchTerm.toLowerCase();
+    for(let i=0; i<car_data.length; i++){
+        let foundNoCase = car_data[i].id.toLowerCase();
+        if(foundNoCase.includes(searchNoCase)){
+            unsortedArr.push(car_data[i]);
+         }
+        
+    }
+
+    //let sorted = unsortedArr.sort(function(a,b){return b.highway_mpg - a.highway_mpg});
+    return unsortedArr;
 
 }
 
